@@ -2,4 +2,9 @@
 .gradle
 
 # Ignore Gradle build output directory
-build
+app/build
+
+gradlew
+gradlew.bat
+.vscode
+.idea
