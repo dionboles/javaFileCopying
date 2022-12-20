@@ -23,9 +23,17 @@ class Filewalker {
         System.out.printf("Copying %s to %s%n", sourcePath, targetPath);
         File sourcFile = new File(sourcePath);
         File targetFile = new File(targetPath);
-        FileFilter
+
         try {
-            FileUtils.copyDirectory(sourcFile, targetFile);
+            FileUtils.copyDirectory(sourcFile, targetFile, pathname -> {
+                if(!pathname.toString().contains("node_modules") || !pathname.toString().contains("bower_components")) {
+                    if(!pathname.toString().contains("node_modules") == false) {
+                        System.out.println(pathname);
+                    }
+                    return pathname.canRead();
+                }
+                return false;
+            });
         } catch (Exception e) {
             System.out.println(e);
         }
