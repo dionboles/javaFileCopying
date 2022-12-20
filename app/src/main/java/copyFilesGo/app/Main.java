@@ -16,7 +16,7 @@ import org.apache.commons.io.FileUtils;
 
 class Filewalker {
 
-    public void CopyDirectoryRecursively(String sourceDir, String destinationDir) {
+    public void copyDirectoryRecursively(String sourceDir, String destinationDir) {
 
         String sourcePath = sourceDir;
         String targetPath = destinationDir;
@@ -51,7 +51,7 @@ class Filewalker {
                     "/Users/dionboles/Library/Containers/com.wdc.WDDesktop.WDDesktopFinderSync/Data/volumes/e161eba9-2a6b-4d7c-af87-31f627c83d7f/Dion's My Cloud Home/Coding").toString();
             try {
                 Filewalker file_walker = new Filewalker();
-                file_walker.CopyDirectoryRecursively(sourceDir, destinationDir);
+                file_walker.copyDirectoryRecursively(sourceDir, destinationDir);
             } catch (Exception e) {
                 System.out.println(e.toString());
             }
